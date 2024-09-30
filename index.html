@@ -6,9 +6,12 @@
     <title>Instagram</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="utility.css" />
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
   </head>
   <body>
-    <div class="main flex align-center">
+    <div class="main flex justify-between align-start ">
       <div class="sideBar border bg-white">
         <nav class="navbar flex justify-between align-start flex-column p-10">
           <div class="menu flex justify-center flex-column align-start">
@@ -119,8 +122,8 @@
       <div class="form_div border bg-white">
         <div class="form-box"></div>
           <div class="tabs">
-            <button id="login-tab" class="active-tab" onclick="showLogin()">Login</button>
-            <button id="signup-tab" onclick="showSignup()">Sign Up</button>
+            <button id="login-tab" class="active-tab" onclick="showLoginForm()">Login</button>
+            <button id="signup-tab" onclick="showSignupForm()">Sign Up</button>
           </div>
       
           <div id="login-form" class="form-content flex flex-column">

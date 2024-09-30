@@ -5,21 +5,22 @@ body {
 }
 
 .main {
+  display: flex;
+  justify-content: space-between !important;
+  height: 100vh;
+  overflow-x: hidden;
   position: relative;
-  /* display: flex;
-    align-items: center;
-    justify-content: center; */
-  width: 100%;
-  height: 100%;
 }
 
 .sideBar {
   width: 15%;
+  min-width: 200px;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
+  max-width: 200px;
 }
 .navbar{
     height: 100%;
@@ -45,7 +46,7 @@ body {
     list-style: none;
     font-size: 18px;
     line-height: 3rem;
-    font-weight: 300;
+    font-weight: 300 !important;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -58,9 +59,11 @@ body {
   height: 20px;
 }
 
-.home_page{
-  width: 40%;
-  margin-left: 30%;
+.home_page {
+  width: 50%;
+  max-width: 600px;
+  min-width: 300px;
+  margin: 0 20%;
 }
 .story_wrapper{
   width: 100%;
@@ -89,6 +92,7 @@ body {
 
 .post_image{
   width: 100%;
+  height: auto;
 }
 .post_footer{
   padding: 5px 10px;
@@ -147,11 +151,17 @@ body {
  cursor: pointer;
 }
 
-.form_div{
-  margin-left: 5%;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
+.form_div {
+  width: 30%; /* Set the width of the form */
+  position: fixed;
+  top: 50%; /* Centers the form vertically in the viewport */
+  left: calc(51% + 220px); /* Adjust left to be next to the home_page */
+  transform: translateY(-50%); /* Keeps the form centered vertically */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+  z-index: 100; /* Ensures the form stays on top */
 }
 .tabs{
   display: flex;
