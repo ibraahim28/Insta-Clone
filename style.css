@@ -5,8 +5,7 @@ body {
 }
 
 .main {
-  display: flex;
-  justify-content: space-between !important;
+  width: 100vw;
   height: 100vh;
   overflow-x: hidden;
   position: relative;
@@ -22,39 +21,39 @@ body {
   z-index: 10;
   max-width: 200px;
 }
-.navbar{
-    height: 100%;
+.navbar {
+  height: 100%;
 }
 
-.more{
-    margin-top: auto;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    cursor: pointer;
+.more {
+  margin-top: auto;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  cursor: pointer;
 }
 .menu .logo img {
   width: 8rem;
   height: 6rem;
 }
 
-.list{
-    padding-left: 20px;
-    margin: 10px 0;
+.list {
+  padding-left: 20px;
+  margin: 10px 0;
 }
 
-.list ul li{
-    list-style: none;
-    font-size: 18px;
-    line-height: 3rem;
-    font-weight: 300 !important;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
+.list ul li {
+  list-style: none;
+  font-size: 18px;
+  line-height: 3rem;
+  font-weight: 300 !important;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
 
-.list ul li img{
+.list ul li img {
   width: 20px;
   height: 20px;
 }
@@ -63,51 +62,52 @@ body {
   width: 50%;
   max-width: 600px;
   min-width: 300px;
-  margin: 0 20%;
+  margin-left: 20%;
+  margin-right: 5%;
 }
-.story_wrapper{
+.story_wrapper {
   width: 100%;
 }
-.story{
+.story {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 10px;
 }
-.story_border{
+.story_border {
   width: 60px;
   height: 60px;
   border: 1px solid black;
   border-radius: 50%;
 }
-.foryou_page{
+.foryou_page {
   width: 100%;
 }
 
-.post{
+.post {
   width: 100%;
-  border-radius: 10px !important;
+  border-radius: 10px; 
 }
 
-.post_image{
+.post_image {
   width: 100%;
   height: auto;
 }
-.post_footer{
+.post_footer {
   padding: 5px 10px;
 }
-.liked_by{
+.liked_by {
   padding: 0 10px;
 }
-.post_footer   img{
+.post_footer img {
   cursor: pointer;
 }
-.caption p{
+.caption p {
   font-weight: 300 !important;
   font-size: 16px;
 }
-.view_all{
+.view_all {
   font-size: 14px;
   color: rgb(114, 114, 114);
   gap: 10px;
@@ -115,25 +115,25 @@ body {
   flex-direction: column;
   padding: 5px 10px;
 }
-.comments{
+.comments {
   width: 100%;
 }
-.add_comment{
+.add_comment {
   position: relative;
   margin-top: 5px;
   border-top: 0.75px solid rgb(190, 190, 190);
   gap: 5px;
 }
-#post_cmnt{
+#post_cmnt {
   width: 100%;
-  outline:none;
+  outline: none;
   border: none;
   /* border-top: 0.5px solid rgb(190, 190, 190); */
   padding: 15px 15px;
   font-size: 16px;
   background: transparent;
 }
-.post_btn{
+.post_btn {
   position: absolute;
   cursor: pointer;
   right: 0;
@@ -144,26 +144,26 @@ body {
   background-color: transparent;
   color: rgba(46, 99, 214, 0.986);
   font-size: 16px;
-  font-weight: 500; 
+  font-weight: 500;
 }
-.emoji{
- padding-left: 10px;
- cursor: pointer;
+.emoji {
+  padding-left: 10px;
+  cursor: pointer;
 }
 
 .form_div {
-  width: 30%; /* Set the width of the form */
+  width: 30%; 
   position: fixed;
-  top: 50%; /* Centers the form vertically in the viewport */
-  left: calc(51% + 220px); /* Adjust left to be next to the home_page */
-  transform: translateY(-50%); /* Keeps the form centered vertically */
+  top: 50%; 
+  left: calc(51% + 220px); 
+  transform: translateY(-50%); 
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
-  z-index: 100; /* Ensures the form stays on top */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); 
+  z-index: 100; 
 }
-.tabs{
+.tabs {
   display: flex;
   justify-content: space-around;
   margin-bottom: 30px;
@@ -182,7 +182,7 @@ button {
   font-size: 16px;
   font-weight: bold;
   color: #888;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 .form-content label {
   text-align: left;
@@ -208,5 +208,102 @@ button[type="submit"] {
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease
+  transition: background-color 0.3s ease;
+}
+
+.account_wrapper{
+  position: relative;
+  width: 30%;
+  padding: 10px;
+  margin-top: 5%;
+  margin-right: 3%;
+}
+
+.acc_div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  position: absolute;
+  right: 0;
+  gap: 10px;
+  top: 0;
+}
+#logout{
+  border-radius: 5px;
+
+}
+button#logout:hover {
+  color: #fff;
+  background-color: red;
+}
+
+#account_name{
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#profile_picture{
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.create_post{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+.post_data{
+  text-align: left;
+}
+
+.post_data input{
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 14px;
+}
+
+.post_data label {
+  text-align: left;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555555;
+  width: 20vw;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }

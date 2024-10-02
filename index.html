@@ -11,7 +11,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
   </head>
   <body>
-    <div class="main flex justify-between align-start ">
+    <div class="main flex justify-between align-start">
+      
       <div class="sideBar border bg-white">
         <nav class="navbar flex justify-between align-start flex-column p-10">
           <div class="menu flex justify-center flex-column align-start">
@@ -31,7 +32,7 @@
                 <li>
                   <img src="./img/icons/heart.svg" alt="heart" />Notifications
                 </li>
-                <li>
+                <li onclick="openModal()" >
                   <img src="./img/icons/create.svg" alt="create post" />Create
                 </li>
                 <li>
@@ -71,14 +72,14 @@
             <div class="acc_name"><p>Ibrahim</p></div>
           </div>
         </div>
-        <div class="foryou_page flex flex-column align-center ">
+        <div class="foryou_page flex flex-column align-center">
           <div class="post flex bg-white flex-column round border">
             <div class="post_head p-10 flex justify-between align-center">
-              <div style="cursor: pointer;" class="acc flex gap">
+              <div style="cursor: pointer" class="acc flex gap">
                 <img src="./img/icons/profile.svg" alt="profile_picture" />
                 <p class="flex align-center justify-between">Nature_magazine</p>
               </div>
-              <div class="settings" style="cursor: pointer;">
+              <div class="settings" style="cursor: pointer">
                 <img src="./img/icons/threedots.svg" alt="Settings" />
               </div>
             </div>
@@ -87,67 +88,134 @@
             </div>
             <div class="post_footer flex justify-between align-center">
               <div class="like_share flex gap align-center">
-                <img width="20" src="./img/icons/heart.svg" alt="Like">
-                <img width="20" src="./img/icons/share.svg" alt="Share">
-                <img width="20" src="./img/icons/comment.svg" alt="Comment">
+                <img width="20" src="./img/icons/heart.svg" alt="Like" />
+                <img width="20" src="./img/icons/share.svg" alt="Share" />
+                <img width="20" src="./img/icons/comment.svg" alt="Comment" />
               </div>
               <div class="bookmark">
-                <img width="20" src="./img/icons/bookmark.svg" alt="Bookmark">
+                <img width="20" src="./img/icons/bookmark.svg" alt="Bookmark" />
               </div>
             </div>
             <div class="caption_div">
               <div class="liked_by flex align-center gap">
-                <img src="./img/icons/profile.svg" alt="profile_picture" width="20">
-                <p style="font-size: 14px;">Liked by <b>Ibrahim</b> and others</p>
+                <img
+                  src="./img/icons/profile.svg"
+                  alt="profile_picture"
+                  width="20"
+                />
+                <p style="font-size: 14px">
+                  Liked by <b>Ibrahim</b> and others
+                </p>
               </div>
               <div class="caption p-10">
-                 <p><b>nature_magazine </b> Beautiful nature pic shot by @ig_saadi</p>
+                <p>
+                  <b>nature_magazine </b> Beautiful nature pic shot by @ig_saadi
+                </p>
               </div>
-            </div> 
-            <div class="comments flex flex-column ">
+            </div>
+            <div class="comments flex flex-column">
               <div class="view_all">
                 <p>View all 8 comments</p>
                 <p>3 days ago</p>
               </div>
-              <div class="add_comment flex align-center ">
-
-                <img src="./img/icons/emoji.svg" alt="Smiley" class="emoji">
-                <input type="text" id="post_cmnt" class="border" placeholder="Add a comment..."/>
+              <div class="add_comment flex align-center">
+                <img src="./img/icons/emoji.svg" alt="Smiley" class="emoji" />
+                <input
+                  type="text"
+                  id="post_cmnt"
+                  class="border"
+                  placeholder="Add a comment..."
+                />
                 <button class="post_btn">Post</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="form_div border bg-white">
+      <div class="form_div border bg-white" id="form_div">
         <div class="form-box"></div>
-          <div class="tabs">
-            <button id="login-tab" class="active-tab" onclick="showLoginForm()">Login</button>
-            <button id="signup-tab" onclick="showSignupForm()">Sign Up</button>
+        <div class="tabs">
+          <button id="login-tab" class="active-tab" onclick="showLoginForm()">
+            Login
+          </button>
+          <button id="signup-tab" onclick="showSignupForm()">Sign Up</button>
+        </div>
+
+        <div id="login-form" class="form-content flex flex-column">
+          <label for="login-email">Email</label>
+          <input
+            type="email"
+            id="login-email"
+            name="login-email"
+            placeholder="Enter your email"
+          />
+          <label for="login-password">Password</label>
+          <input
+            type="password"
+            id="login-password"
+            name="login-password"
+            placeholder="Enter your password"
+          />
+          <button type="submit" onclick="login_with_email()">Login</button>
+        </div>
+
+        <div id="signup-form" class="form-content hidden">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="example_ig"
+          />
+          <label for="profile_pic">URL for profile picture (optional)</label>
+          <input
+          type="text"
+          id="profile_pic"
+          name="profile_pic"
+          />
+          <label for="signup-email">Email</label>
+          <input
+            type="email"
+            id="signup-email"
+            name="signup-email"
+            placeholder="Enter your email"
+          />
+          <label for="signup-password">Password</label>
+          <input
+            type="password"
+            id="signup-password"
+            name="signup-password"
+            placeholder="Create a password"
+          />
+          <button type="submit" onclick="signup_with_email()">Sign Up</button>
+        </div>
+      </div>
+      <div class="account_wrapper hidden" id="acc_section">
+        <div class="acc_div flex align-center justify-between border round">
+          <div class="profile_pic">
+            <img src="./img/icons/profile.svg" id="profile_picture" alt="Profile Picture" />
           </div>
-      
-          <div id="login-form" class="form-content flex flex-column">
-
-              <label for="login-email">Email</label>
-              <input type="email" id="login-email" name="login-email" placeholder="Enter your email">
-              <label for="login-password">Password</label>
-              <input type="password" id="login-password" name="login-password" placeholder="Enter your password">
-              <button type="submit" onclick="login_with_email()">Login</button>
-
+          <div class="acc_name">
+            <p id="account_name">Account Name</p>
+            <p id="account_email">@email</p>
           </div>
-      
-          <div id="signup-form" class="form-content hidden">
-              <label for="username">Username</label>
-              <input type="text" name="username" id="username" placeholder="example_ig">
-              <label for="signup-email">Email</label>
-              <input type="email" id="signup-email" name="signup-email" placeholder="Enter your email">
-              <label for="signup-password">Password</label>
-              <input type="password" id="signup-password" name="signup-password" placeholder="Create a password">
-              <button type="submit" onclick="signup_with_email()">Sign Up</button>
-
+          <div class="logout">
+            <button id="logout" onclick="logout()">Logout</button>
           </div>
         </div>
+      </div>
     </div>
+    <div id="post-modal" class="create_post hidden">
+      <span onclick="closeModal()" class="close-btn">&times;</span>
+      <div class="post_data flex flex-column">
+        <label for="post-url">Post URL</label>
+        <input type="text" name="post-url" id="post-url" />
+        <label for="post-caption">Caption</label>
+        <input type="text" name="post-caption" id="post-caption" />
+      </div>
+    </div>
+    <div id="overlay" onclick="closeModal()" class="overlay hidden"></div>
+
     <script src="app.js"></script>
   </body>
 </html>
